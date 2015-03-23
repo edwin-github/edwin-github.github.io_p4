@@ -535,7 +535,7 @@ document.addEventListener('DOMContentLoaded', function() {
   var mP = document.querySelector("#movingPizzas1");
   console.log(screen.availHeight);
   console.log(window.innerHeight);
-  for (var i = 0; i < 200; i++) {
+  for (var i = 0; i < 10; i++) {
     var elem = document.createElement('img');
     elem.className = 'mover';
     elem.src = "images/pizza.png";
