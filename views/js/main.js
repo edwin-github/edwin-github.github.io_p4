@@ -534,6 +534,7 @@ document.addEventListener('DOMContentLoaded', function() {
   var s = 256;
   var mP = document.querySelector("#movingPizzas1");
   console.log(screen.availHeight);
+   console.log(window.screen.availHeight);
   console.log(window.innerHeight);
   console.log(document.documentElement.clientHeight);
    console.log(document.getElementsByTagName('body')[0].clientHeight);
