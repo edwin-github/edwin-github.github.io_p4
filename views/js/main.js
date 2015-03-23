@@ -510,8 +510,10 @@ function updatePositions() {
 
  //retrieve the element once, there is no need to retrieve it for each element in the for loop.
   var scrTop = document.body.scrollTop;
+  Math.sin((scrTop / 1250);
   for (var i = 0; i < items.length; i++) {
     var phase = Math.sin((scrTop / 1250) + (i % 5));
+    console.log("phase: " + phase);
     items[i].style.left = items[i].basicLeft + 100 * phase + 'px';
   }
 
@@ -533,16 +535,10 @@ document.addEventListener('DOMContentLoaded', function() {
   var cols = 8;
   var s = 256;
   var mP = document.querySelector("#movingPizzas1");
-  console.log(screen.availHeight);
-   console.log(window.screen.availHeight);
-  console.log(window.innerHeight);
-  console.log(document.documentElement.clientHeight);
-   console.log(document.getElementsByTagName('body')[0].clientHeight);
-
-
-var i = 0;
-var t = 0;
-while (t < document.documentElement.clientHeight) {
+  var i = 0;
+  var t = 0;
+  //loop only up to the confines of the browser window resolution as opposed to up to 200.
+  while (t < document.documentElement.clientHeight) {
 	t = (Math.floor(i / cols) * s);
 	var elem = document.createElement('img');
 	elem.className = 'mover';
@@ -556,6 +552,6 @@ while (t < document.documentElement.clientHeight) {
 	console.log("iiii: " + i);
 	mP.appendChild(elem);
 	i++;
-}
+  }
   updatePositions();
 });
