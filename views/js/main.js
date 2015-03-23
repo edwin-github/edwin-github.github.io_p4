@@ -539,17 +539,22 @@ document.addEventListener('DOMContentLoaded', function() {
   console.log(document.documentElement.clientHeight);
    console.log(document.getElementsByTagName('body')[0].clientHeight);
 
-  for (var i = 0; i < 35; i++) {
-    var elem = document.createElement('img');
-    elem.className = 'mover';
-    elem.src = "images/pizza.png";
-    elem.style.height = "100px";
-    elem.style.width = "73.333px";
-    elem.basicLeft = (i % cols) * s;
-    elem.style.top = (Math.floor(i / cols) * s) + 'px';
-    console.log("elem.style.top: " + elem.style.top);
-    console.log("elem.basicLeft: " + i % cols);
-    mP.appendChild(elem);
-  }
+
+var i = 0;
+var t = 0;
+while (t < document.documentElement.clientHeight) {
+	t = (Math.floor(i / cols) * s);
+	var elem = document.createElement('img');
+	elem.className = 'mover';
+	elem.src = "images/pizza.png";
+	elem.style.height = "100px";
+	elem.style.width = "73.333px";
+	elem.basicLeft = (i % cols) * s;
+	elem.style.top = t + 'px';
+	console.log("elem.style.top: " + elem.style.top);
+	console.log("elem.basicLeft: " + i % cols);
+	mP.appendChild(elem);
+	i++;
+}
   updatePositions();
 });
