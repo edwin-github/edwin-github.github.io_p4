@@ -522,7 +522,7 @@ function updatePositions() {
     //items[i].style.left = items[i].basicLeft + 100 * phase[i%5] + 'px';
     var xAxis = items[i].basicLeft + 100 * phase[i%5] + 'px';
     console.log("xAxis: "+ xAxis);
-    items[i].style.WebkitTransform = "translateX(" +xAxis+ ")";
+    items[i].style.WebkitTransform = "translateX(items[i].basicLeft + 100 * phase[i%5] + 'px')";
   }
 
   // User Timing API to the rescue again. Seriously, it's worth learning.
