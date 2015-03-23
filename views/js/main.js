@@ -519,10 +519,11 @@ function updatePositions() {
  		  ];
 
   for (var i = 0; i < items.length; i++) {
-    //items[i].style.left = items[i].basicLeft + 100 * phase[i%5] + 'px';
-    var xAxis = items[i].basicLeft + 100 * phase[i%5] + 'px';
-    console.log("xAxis: " + xAxis);
-    items[i].style.transform = "translateX(" +xAxis+ ")";
+    console.log("xAxis: " + items[i].basicLeft + 100 * phase[i%5] + "px");	
+    items[i].style.left = items[i].basicLeft + 100 * phase[i%5] + 'px';
+    //var xAxis = items[i].basicLeft + 100 * phase[i%5] + 'px';
+    //console.log("xAxis: " + xAxis);
+    //items[i].style.transform = "translateX(" +xAxis+ ")";
   }
 
   // User Timing API to the rescue again. Seriously, it's worth learning.
