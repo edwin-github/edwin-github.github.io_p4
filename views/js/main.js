@@ -510,11 +510,16 @@ function updatePositions() {
 
  //retrieve the element once, there is no need to retrieve it for each element in the for loop.
   var scrTop = document.body.scrollTop;
-  var phaseArr = new Array;
-  
-  for (var n = 0; n < 5; n++) {
-    phaseArr[n] = Math.sin((scrTop / 1250) + (n % 5));
-  }
+  //var phaseArr = new Array;
+  var phaseArr = [Math.sin((scrTop / 1250) + (0 % 5)), 
+  		  Math.sin((scrTop / 1250) + (1 % 5)),
+  		  Math.sin((scrTop / 1250) + (2 % 5)),
+  		  Math.sin((scrTop / 1250) + (3 % 5)),
+  		  Math.sin((scrTop / 1250) + (4 % 5))
+ 		  ];
+  //for (var n = 0; n < 5; n++) {
+  //  phaseArr[n] = Math.sin((scrTop / 1250) + (n % 5));
+  //}
     for (var n = 0; n < 5; n++) {
     console.log("phaseArr[" + n + "]" + phaseArr[n] );
   }
