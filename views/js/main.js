@@ -548,6 +548,7 @@ document.addEventListener('DOMContentLoaded', function() {
     elem.basicLeft = (i % cols) * s;
     elem.style.top = (Math.floor(i / cols) * s) + 'px';
     console.log("elem.style.top: " + elem.style.top);
+    console.log("elem.basicLeft: " + elem.basicLeft);
     mP.appendChild(elem);
   }
   updatePositions();
