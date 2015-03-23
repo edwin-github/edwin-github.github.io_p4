@@ -551,8 +551,9 @@ while (t < document.documentElement.clientHeight) {
 	elem.style.width = "73.333px";
 	elem.basicLeft = (i % cols) * s;
 	elem.style.top = t + 'px';
-	console.log("elem.style.top: " + elem.style.top);
-	console.log("elem.basicLeft: " + i % cols);
+	//console.log("elem.style.top: " + elem.style.top);
+	//console.log("elem.basicLeft: " + i % cols);
+	console.log("iiii: " + i);
 	mP.appendChild(elem);
 	i++;
 }
