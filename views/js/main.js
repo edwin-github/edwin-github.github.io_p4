@@ -517,7 +517,7 @@ function updatePositions() {
     console.log("phase: " + phase);
     console.log("scrTop: " + scrTop);
     console.log("modulo: " + i % 5);
-    console.log("========================================================";
+    console.log("========================================================");
     items[i].style.left = items[i].basicLeft + 100 * phase + 'px';
   }
 
