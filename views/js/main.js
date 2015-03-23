@@ -514,6 +514,8 @@ function updatePositions() {
   for (var i = 0; i < items.length; i++) {
     var phase = Math.sin((scrTop / 1250) + (i % 5));
     console.log("phase: " + phase);
+    console.log("scrTop: " + scrTop);
+    console.log("modulo: " + i % 5);
     items[i].style.left = items[i].basicLeft + 100 * phase + 'px';
   }
 
