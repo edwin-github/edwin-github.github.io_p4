@@ -536,7 +536,7 @@ document.addEventListener('DOMContentLoaded', function() {
   console.log(screen.availHeight);
   console.log(window.innerHeight);
   console.log(document.documentElement.clientHeight);
-   console.log(getElementsByTagName('body')[0].clientHeight);
+   console.log(document.getElementsByTagName('body')[0].clientHeight);
 
   for (var i = 0; i < 2; i++) {
     var elem = document.createElement('img');
