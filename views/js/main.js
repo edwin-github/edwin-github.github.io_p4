@@ -539,7 +539,7 @@ document.addEventListener('DOMContentLoaded', function() {
   console.log(document.documentElement.clientHeight);
    console.log(document.getElementsByTagName('body')[0].clientHeight);
 
-  for (var i = 0; i < 2; i++) {
+  for (var i = 0; i < 35; i++) {
     var elem = document.createElement('img');
     elem.className = 'mover';
     elem.src = "images/pizza.png";
