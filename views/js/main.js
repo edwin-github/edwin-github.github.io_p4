@@ -510,27 +510,24 @@ function updatePositions() {
 
  //retrieve the element once, there is no need to retrieve it for each element in the for loop.
   var scrTop = document.body.scrollTop;
-  //var phaseArr = new Array;
-  var phaseArr = [Math.sin((scrTop / 1250) + (0 % 5)), 
+
+  var phase    = [Math.sin((scrTop / 1250) + (0 % 5)), 
   		  Math.sin((scrTop / 1250) + (1 % 5)),
   		  Math.sin((scrTop / 1250) + (2 % 5)),
   		  Math.sin((scrTop / 1250) + (3 % 5)),
   		  Math.sin((scrTop / 1250) + (4 % 5))
  		  ];
-  //for (var n = 0; n < 5; n++) {
-  //  phaseArr[n] = Math.sin((scrTop / 1250) + (n % 5));
+//    for (var n = 0; n < 5; n++) {
+//    console.log("phaseArr[" + n + "]" + phaseArr[n] );
   //}
-    for (var n = 0; n < 5; n++) {
-    console.log("phaseArr[" + n + "]" + phaseArr[n] );
-  }
   
   for (var i = 0; i < items.length; i++) {
-    var phase = Math.sin((scrTop / 1250) + (i % 5));
+    //var phase = Math.sin((scrTop / 1250) + (i % 5));
     console.log("phase: " + phase);
     console.log("scrTop: " + scrTop);
     console.log("modulo: " + i % 5);
     console.log("************************************************" + i);
-    items[i].style.left = items[i].basicLeft + 100 * phase + 'px';
+    items[i].style.left = items[i].basicLeft + 100 * phase[i%5] + 'px';
   }
 
   // User Timing API to the rescue again. Seriously, it's worth learning.
