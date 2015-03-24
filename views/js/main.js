@@ -451,11 +451,12 @@ var resizePizzas = function(size) {
   //retrieve the randomPizzaContainer element and calculate the new width one time,
   //there is no need to retrieve/calculate it for each element in the for loop.
   var rPC = document.querySelectorAll(".randomPizzaContainer");
+  var rPCLen = rPC.length;
   var dx = determineDx(rPC[0], size);
   var newwidth = (rPC[0].offsetWidth + dx) + 'px';
   // Iterates through pizza elements on the page and changes their widths
   function changePizzaSizes(size) {
-    for (var i = 0; i < rPC.length; i++) {
+    for (var i = 0; i < rPCLen; i++) {
       rPC[i].style.width = newwidth;
     }
   }
@@ -501,13 +502,14 @@ function logAverageFrame(times) {   // times is the array of User Timing measure
 // The following code for sliding background pizzas was pulled from Ilya's demo found at:
 // https://www.igvita.com/slides/2012/devtools-tips-and-tricks/jank-demo.html
 
+  var items = document.querySelectorAll('.mover');
+  var itemsLen = items.length;
+  
 // Moves the sliding background pizzas based on scroll position
 function updatePositions() {
   frame++;
   window.performance.mark("mark_start_frame");
-
-  var items = document.querySelectorAll('.mover');
-
+  
   //retrieve the element once, there is no need to retrieve it for each element in the for loop.
   var scrTop = document.body.scrollTop;
   //calculate the phase here and use the array in the for loop, Math.sin can be very expensive inside a loop
@@ -518,7 +520,7 @@ function updatePositions() {
   		  Math.sin((scrTop / 1250) + (4 % 5))
  		  ];
 
-  for (var i = 0; i < items.length; i++) {
+  for (var i = 0; i < itemsLen; i++) {
     var xAxis = items[i].basicLeft + 100 * phase[i%5] + 'px';
     items[i].style.transform = "translateX(" +xAxis+ ")";
   }
