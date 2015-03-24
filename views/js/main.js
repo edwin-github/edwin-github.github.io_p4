@@ -535,7 +535,8 @@ function updatePositions() {
 
 // runs updatePositions on scroll
 window.addEventListener('scroll', updatePositions);
-
+var items;
+var itemsLen;
 // Generates the sliding pizzas when the page loads.
 document.addEventListener('DOMContentLoaded', function() {
   var cols = 8;
@@ -556,7 +557,7 @@ document.addEventListener('DOMContentLoaded', function() {
 	mP.appendChild(elem);
 	i++;
   }
-    var items = document.querySelectorAll('.mover');
-  var itemsLen = items.length;
+  items = document.querySelectorAll('.mover');
+  itemsLen = items.length;
   updatePositions();
 });
