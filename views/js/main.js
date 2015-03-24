@@ -519,10 +519,7 @@ function updatePositions() {
  		  ];
 
   for (var i = 0; i < items.length; i++) {
-    //console.log("xAxis: " + items[i].basicLeft + 100 * phase[i%5] + "px");	
-    //items[i].style.left = items[i].basicLeft + 100 * phase[i%5] + 'px';
     var xAxis = items[i].basicLeft + 100 * phase[i%5] + 'px';
-    console.log("xAxis: " + xAxis);
     items[i].style.transform = "translateX(" +xAxis+ ")";
   }
 
@@ -557,7 +554,6 @@ document.addEventListener('DOMContentLoaded', function() {
 	elem.basicLeft = (i % cols) * s;
 	elem.style.top = t + 'px';
 	mP.appendChild(elem);
-	console.log("elem.basicLeft: " + elem.basicLeft);
 	i++;
   }
   updatePositions();
