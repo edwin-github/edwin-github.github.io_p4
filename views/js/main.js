@@ -15,8 +15,6 @@ Creator:
 Cameron Pittman, Udacity Course Developer
 cameron *at* udacity *dot* com
 */
-  var items = document.querySelectorAll('.mover');
-  var itemsLen = items.length;
 // As you may have realized, this website randomly generates pizzas.
 // Here are arrays of all possible pizza ingredients.
 var pizzaIngredients = {};
@@ -503,7 +501,8 @@ function logAverageFrame(times) {   // times is the array of User Timing measure
 // The following code for sliding background pizzas was pulled from Ilya's demo found at:
 // https://www.igvita.com/slides/2012/devtools-tips-and-tricks/jank-demo.html
 
-  
+  var items = document.querySelectorAll('.mover');
+  var itemsLen = items.length;  
 // Moves the sliding background pizzas based on scroll position
 function updatePositions() {
   frame++;
@@ -521,6 +520,8 @@ function updatePositions() {
   for (var i = 0; i < itemsLen; i++) {
     var xAxis = items[i].basicLeft + 100 * phase[i%5] + 'px';
     items[i].style.transform = "translateX(" +xAxis+ ")";
+    console.log("xAxis: " + xAxis);
+    console.log("itemsLen: " + itemsLen);
   }
 
   // User Timing API to the rescue again. Seriously, it's worth learning.
