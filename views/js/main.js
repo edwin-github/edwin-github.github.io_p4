@@ -515,12 +515,9 @@ function updatePositions() {
   		  Math.sin((scrTop / 1250) + (3 % 5)),
   		  Math.sin((scrTop / 1250) + (4 % 5))
  		  ];
-    console.log("itemsLen: " + itemsLen);
   for (var i = 0; i < itemsLen; i++) {
     var xAxis = items[i].basicLeft + 100 * phase[i%5] + 'px';
     items[i].style.transform = "translateX(" +xAxis+ ")";
-    console.log("xAxis: " + xAxis);
-    console.log("itemsLen: " + itemsLen);
   }
 
   // User Timing API to the rescue again. Seriously, it's worth learning.
